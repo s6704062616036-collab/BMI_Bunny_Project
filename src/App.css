@@ -14,6 +14,7 @@
 
 .hero-card {
   padding: 36px;
+  overflow: hidden;
 }
 
 .brand {
@@ -62,6 +63,7 @@
 .hero-copy h1,
 .section-head h2 {
   margin: 0;
+  text-wrap: balance;
 }
 
 .hero-text,
@@ -93,6 +95,7 @@
   box-shadow:
     0 16px 32px rgba(255, 111, 145, 0.26),
     0 0 0 8px rgba(255, 111, 145, 0.08);
+  touch-action: manipulation;
   transition:
     transform 0.18s ease,
     box-shadow 0.18s ease,
@@ -137,6 +140,10 @@
   padding: 30px;
 }
 
+.form-panel {
+  scroll-margin-top: 18px;
+}
+
 .section-head {
   margin-bottom: 22px;
 }
@@ -160,6 +167,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  min-height: 56px;
   padding: 0 16px;
   border: 1px solid #d7e7e0;
   border-radius: 18px;
@@ -187,6 +195,7 @@
   outline: none;
   background: transparent;
   color: #364640;
+  font-variant-numeric: tabular-nums;
 }
 
 .field input::placeholder {
@@ -194,6 +203,15 @@
 }
 
 .input-shell em {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #f7faf8;
   font-style: normal;
   font-weight: 700;
   color: #7f8f89;
@@ -259,6 +277,7 @@
   font: inherit;
   font-weight: 700;
   cursor: pointer;
+  touch-action: manipulation;
   transition:
     transform 0.18s ease,
     box-shadow 0.18s ease,
@@ -382,6 +401,8 @@
   font-size: clamp(4.2rem, 10vw, 5.8rem);
   line-height: 0.92;
   color: #2f3f3a;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.05em;
   animation: pop-in 0.45s ease;
 }
 
@@ -426,6 +447,10 @@
 .guide-card p {
   margin: 0;
   color: #677571;
+}
+
+.guide-card strong {
+  line-height: 1.35;
 }
 
 .guide-card.is-active {
@@ -502,6 +527,14 @@
   .guide-grid {
     grid-template-columns: 1fr;
   }
+
+  .hero-copy {
+    max-width: 34rem;
+  }
+
+  .result-panel {
+    order: -1;
+  }
 }
 
 @media (max-width: 720px) {
@@ -520,15 +553,358 @@
     gap: 14px;
   }
 
+  .hero-card {
+    padding-top: 24px;
+  }
+
+  .hero-copy {
+    gap: 12px;
+  }
+
+  .hero-text {
+    max-width: none;
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .hero-note {
+    padding: 16px 18px;
+    border-radius: 18px;
+  }
+
+  .main-grid {
+    gap: 18px;
+  }
+
+  .bmi-form {
+    gap: 16px;
+  }
+
+  .field-note {
+    font-size: 0.88rem;
+  }
+
   .form-actions,
   .result-head {
     flex-direction: column;
     align-items: stretch;
   }
 
+  .result-panel,
+  .result-list,
+  .guide-grid {
+    gap: 12px;
+  }
+
+  .result-value {
+    font-size: clamp(3.4rem, 16vw, 4.6rem);
+  }
+
+  .result-list article,
+  .guide-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
   .hero-button,
   .primary-button,
   .secondary-button {
     width: 100%;
+  }
+
+  .panel,
+  .hero-card {
+    box-shadow: 0 14px 28px rgba(122, 141, 134, 0.09);
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-card,
+  .panel {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .brand-text {
+    font-size: 1rem;
+  }
+
+  .hero-grid {
+    margin-top: 22px;
+  }
+
+  .hero-note strong {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .input-shell {
+    padding-inline: 14px;
+    border-radius: 16px;
+  }
+
+  .field input {
+    padding-block: 14px;
+    font-size: 16px;
+  }
+
+  .formula-box {
+    padding: 14px 16px;
+    border-radius: 16px;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .hero-button {
+    min-height: 52px;
+    padding: 14px 18px;
+  }
+
+  .result-value {
+    font-size: clamp(3rem, 18vw, 4rem);
+  }
+
+  .result-badge {
+    justify-content: center;
+  }
+
+  .result-list article strong {
+    line-height: 1.5;
+  }
+
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 430px) {
+  .app-shell {
+    gap: 16px;
+  }
+
+  .hero-card,
+  .panel {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .hero-grid {
+    gap: 16px;
+    margin-top: 18px;
+  }
+
+  .hero-copy {
+    gap: 10px;
+  }
+
+  .eyebrow,
+  .section-kicker,
+  .result-kicker {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-text {
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .hero-note {
+    gap: 4px;
+    padding: 14px 15px;
+    border-radius: 16px;
+  }
+
+  .hero-note strong {
+    font-size: 0.92rem;
+  }
+
+  .panel {
+    padding: 18px 16px;
+  }
+
+  .brand {
+    min-height: 30px;
+  }
+
+  .section-head {
+    margin-bottom: 18px;
+  }
+
+  .bmi-form {
+    gap: 14px;
+  }
+
+  .field {
+    gap: 8px;
+  }
+
+  .field span {
+    font-size: 0.95rem;
+  }
+
+  .input-shell {
+    min-height: 52px;
+    padding-inline: 12px;
+  }
+
+  .input-shell em {
+    font-size: 0.9rem;
+  }
+
+  .field-note,
+  .result-note,
+  .result-list span,
+  .guide-card p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .formula-box {
+    gap: 4px;
+  }
+
+  .formula-box strong {
+    font-size: 0.96rem;
+    line-height: 1.5;
+  }
+
+  .form-actions {
+    gap: 10px;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .hero-button {
+    min-height: 50px;
+    font-size: 0.96rem;
+  }
+
+  .result-panel {
+    gap: 14px;
+  }
+
+  .result-value {
+    font-size: clamp(2.8rem, 17vw, 3.8rem);
+  }
+
+  .result-list {
+    gap: 10px;
+  }
+
+  .result-list article {
+    gap: 3px;
+    padding: 14px;
+  }
+
+  .guide-card {
+    gap: 8px;
+    padding: 14px;
+  }
+
+  .guide-card strong {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-card,
+  .panel {
+    padding: 14px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .brand-text {
+    font-size: 0.95rem;
+  }
+
+  .hero-grid {
+    margin-top: 16px;
+  }
+
+  .hero-copy {
+    gap: 8px;
+  }
+
+  .hero-text {
+    font-size: 0.92rem;
+  }
+
+  .hero-note {
+    padding: 12px 13px;
+  }
+
+  .panel {
+    padding: 16px 14px;
+  }
+
+  .main-grid {
+    gap: 14px;
+  }
+
+  .field span {
+    font-size: 0.92rem;
+  }
+
+  .field input {
+    font-size: 16px;
+  }
+
+  .formula-box span {
+    font-size: 0.76rem;
+  }
+
+  .formula-box strong {
+    font-size: 0.92rem;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .hero-button {
+    min-height: 48px;
+    padding: 13px 16px;
+  }
+
+  .result-badge {
+    font-size: 0.86rem;
+    padding: 7px 10px;
+  }
+
+  .result-value {
+    font-size: clamp(2.6rem, 18vw, 3.4rem);
+  }
+
+  .result-note {
+    line-height: 1.6;
+  }
+
+  .result-list article,
+  .guide-card {
+    padding: 12px;
+  }
+}
+
+@media (hover: none) {
+  .hero-button:hover,
+  .primary-button:hover:not(:disabled),
+  .secondary-button:hover {
+    transform: none;
   }
 }
