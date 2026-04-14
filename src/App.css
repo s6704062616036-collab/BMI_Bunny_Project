@@ -34,7 +34,7 @@
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  font-family: 'Nunito', 'Prompt', sans-serif;
+  font-family: 'Prompt', 'Noto Sans Thai', sans-serif;
 }
 
 .hero-grid {
@@ -48,6 +48,7 @@
   display: grid;
   align-content: center;
   gap: 14px;
+  min-width: 0;
 }
 
 .eyebrow,
@@ -65,6 +66,7 @@
 .section-head h2 {
   margin: 0;
   text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .hero-text,
@@ -113,6 +115,7 @@
 .hero-aside {
   display: grid;
   gap: 14px;
+  min-width: 0;
 }
 
 .hero-note {
@@ -128,6 +131,7 @@
   color: #33423d;
   font-size: 1rem;
   line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 .main-grid {
@@ -139,6 +143,7 @@
 
 .panel {
   padding: 30px;
+  min-width: 0;
 }
 
 .form-panel {
@@ -342,6 +347,7 @@
   display: grid;
   gap: 18px;
   align-content: start;
+  min-width: 0;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -430,6 +436,11 @@
 .result-list span {
   font-size: 0.9rem;
   color: #7d8b86;
+}
+
+.result-list strong,
+.guide-card p {
+  overflow-wrap: anywhere;
 }
 
 .guide-grid {
@@ -720,6 +731,10 @@
     line-height: 1.55;
   }
 
+  .hero-copy h1 {
+    max-width: 8ch;
+  }
+
   .hero-note {
     gap: 4px;
     padding: 14px 15px;
@@ -845,6 +860,10 @@
     gap: 8px;
   }
 
+  .hero-copy h1 {
+    max-width: 7.4ch;
+  }
+
   .hero-text {
     font-size: 0.92rem;
   }
@@ -890,7 +909,7 @@
   }
 
   .result-value {
-    font-size: clamp(2.6rem, 18vw, 3.4rem);
+    font-size: clamp(2.5rem, 17vw, 3.2rem);
   }
 
   .result-note {
@@ -900,6 +919,25 @@
   .result-list article,
   .guide-card {
     padding: 12px;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 430px) {
+    .hero-card,
+    .panel {
+      backdrop-filter: none;
+    }
+
+    .hero-copy h1 {
+      letter-spacing: -0.035em;
+    }
+
+    .hero-text,
+    .hero-note strong,
+    .result-note {
+      line-height: 1.5;
+    }
   }
 }
 
