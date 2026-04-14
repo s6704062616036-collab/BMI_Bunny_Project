@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Prompt:wght@500;600;700&display=swap');
+
+:root {
+  color: #4b5b56;
+  background:
+    radial-gradient(circle at top left, rgba(168, 230, 207, 0.3), transparent 34%),
+    radial-gradient(circle at top right, rgba(255, 211, 224, 0.28), transparent 30%),
+    linear-gradient(180deg, #f9fffc 0%, #fffafc 100%);
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: transparent;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+#root {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 40px;
+}
+
+h1,
+h2 {
+  font-family: 'Prompt', 'Nunito', sans-serif;
+  color: #2f3f3a;
+  line-height: 1.12;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: clamp(1.55rem, 3vw, 2.1rem);
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 720px) {
+  #root {
+    width: min(100%, calc(100% - 20px));
+    padding: 16px 0 28px;
+  }
+}
