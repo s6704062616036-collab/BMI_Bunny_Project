@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Prompt:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&family=Prompt:wght@400;500;600;700&display=swap');
 
 :root {
   color: #4b5b56;
@@ -6,7 +6,7 @@
     radial-gradient(circle at top left, rgba(168, 230, 207, 0.3), transparent 34%),
     radial-gradient(circle at top right, rgba(255, 211, 224, 0.28), transparent 30%),
     linear-gradient(180deg, #f9fffc 0%, #fffafc 100%);
-  font-family: 'Nunito', 'Segoe UI', sans-serif;
+  font-family: 'Prompt', 'Noto Sans Thai', 'Segoe UI', sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -14,6 +14,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 * {
@@ -22,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -30,6 +33,7 @@ body {
   min-height: 100vh;
   background: transparent;
   overscroll-behavior-y: none;
+  overflow-x: hidden;
 }
 
 button,
@@ -45,11 +49,12 @@ input {
     max(0px, env(safe-area-inset-right))
     max(40px, env(safe-area-inset-bottom))
     max(0px, env(safe-area-inset-left));
+  overflow-x: clip;
 }
 
 h1,
 h2 {
-  font-family: 'Prompt', 'Nunito', sans-serif;
+  font-family: 'Prompt', 'Noto Sans Thai', 'Segoe UI', sans-serif;
   color: #2f3f3a;
   line-height: 1.12;
 }
